@@ -24,7 +24,7 @@ export default function Login() {
                      hover:bg-roxo-claro hover:text-white hover:border-0 cursor-pointer"
             >
               {" "}
-              Google
+              Microsoft
             </button>
           </div>
           <div className="mt-15 flex flex-col text-cinza-texto">
