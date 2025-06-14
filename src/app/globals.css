@@ -15,8 +15,9 @@
   --font-display: "Poppins";
   --color-cinza-texto: #444242;
   --border-color-borda: #7C7C7C;
-  --color-principal: #4169E1;
+  --color-principal: #3454B4;
   --color-roxo-claro: #6252EE;
+  --color-azul-escuro: #17254F;
 }
 
 @media (prefers-color-scheme: dark) {
