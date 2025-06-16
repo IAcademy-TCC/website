@@ -43,7 +43,7 @@ export default function ComentariosAvaliacoes(): JSX.Element {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="bg-[#192759] py-16 px-6 mx-auto rounded-lg mt-16" ref={ref}>
+    <section className="bg-[#192759] py-16 px-6 mx-auto mt-16" ref={ref}>
       <h2 className="text-white text-4xl font-bold mb-12 text-center">
         Comentários e Avaliações
       </h2>

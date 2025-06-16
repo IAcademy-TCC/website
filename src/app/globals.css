@@ -13,11 +13,29 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-display: "Poppins";
-  --color-cinza-texto: #444242;
-  --border-color-borda: #7C7C7C;
-  --color-principal: #3454B4;
-  --color-roxo-claro: #6252EE;
-  --color-azul-escuro: #17254F;
+
+  --color-normal-blue: #4169E1;
+  --color-normal-hover-blue: #3B5FCB;
+  --color-normal-active-blue: #3454B4;
+  --color-light-blue: #ECF0FC;
+  --color-light-hover-blue: #E3E9FB;
+  --color-light-active-blue: #C4D1F6;
+  --color-dark-blue: #314FA9;
+  --color-dark-hover-blue: #273F87;
+  --color-dark-active-blue: #1D2F65;
+  --color-darker-blue: #17254F;
+
+  --color-light-grey: #F3F3F3;
+  --color-light-hover-grey: #EDEDED;
+  --color-light-active-grey: #DADADA;
+  --color-normal-grey: #878787;
+  --color-normal-hover-grey: #7A7A7A;
+  --color-normal-active-grey: #6C6C6C;
+  --color-dark-grey: #656565;
+  --color-dark-hover-grey: #515151;
+  --color-dark-active-grey: #3D3D3D;
+  --color-darker-grey: #2F2F2F;
+
 }
 
 @media (prefers-color-scheme: dark) {

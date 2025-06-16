@@ -9,7 +9,7 @@ export default function Banner() {
     const router = useRouter();
 
   return (
-    <div className="w-full h-[650px] mx-auto relative overflow-hidden shadow-md">
+    <div className="w-full h-[780px] mx-auto relative overflow-hidden shadow-md">
       
       {/* Banner animado com fade-in e leve zoom */}
       <motion.div
@@ -20,7 +20,7 @@ export default function Banner() {
         <Image
           src={banner}
           alt="Banner"
-          className="w-full h-[650px] object-cover"
+          className="w-full h-[780px] object-cover"
           priority
         />
       </motion.div>

@@ -22,6 +22,7 @@ export default function Beneficios(): JSX.Element {
     { emoji: '🧩', text: 'Exercícios práticos por módulo' },
     { emoji: '📊', text: 'Rankings por campus e matéria' },
     { emoji: '💬', text: 'Comunidade integrada' },
+    { emoji: '💻', text: 'Oportunidades de emprego'},
   ];
 
   const ref = useRef<HTMLDivElement | null>(null);
@@ -30,15 +31,15 @@ export default function Beneficios(): JSX.Element {
 
   return (
     <section className="py-16 px-4 text-center" ref={ref}>
-      <h2 className="text-4xl font-bold text-[#2A2A8F]">
-        Benefícios <span className="text-blue-600 font-bold">/ Features</span>
+      <h2 className="text-4xl font-bold text-darker-blue">
+        Benefícios <span className="text-normal-blue font-bold">/ Features</span>
       </h2>
 
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {cards.map(({ emoji, text }, i) => (
           <motion.div
             key={i}
-            className="bg-blue-600 text-white py-6 px-4 rounded-xl shadow-md text-lg font-semibold"
+            className="bg-normal-blue text-white py-6 px-4 rounded-xl shadow-md text-lg font-semibold"
             variants={cardVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
