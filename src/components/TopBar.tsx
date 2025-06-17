@@ -26,7 +26,7 @@ export default function TopBar() {
           <button
             className="bg-darker-blue px-4 py-2 rounded-lg text-white cursor-pointer hover:bg-dark-hover-blue"
             type="button"
-            onClick={() => router.push("/login")}
+            onClick={() => router.push("/cadastro")}
           >
             Comece Agora
           </button>

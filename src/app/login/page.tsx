@@ -5,11 +5,36 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Input from "../../components/Input";
+import { UsuarioService } from "../../../service/UsuarioService";
 
 export default function Login() {
+  const usuarioService = new UsuarioService();
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+
+  async function login() {
+    if (!email || !senha){
+      alert("Preencha todos os campos")
+    }
+
+    try {
+      const response = await usuarioService.loginUsuario({ email, senha });
+
+      console.log("Login realizado:", response.data);
+      // Opcional: salvar token e redirecionar
+      localStorage.setItem("token", response.data.token);
+
+      router.push("/inicio");
+    } catch (error: any) {
+      console.error("Erro ao logar:", error);
+      if (error.response?.data?.error) {
+        alert(error.response.data.error);
+      } else {
+        alert("Erro inesperado ao tentar fazer login.");
+      }
+    }
+  }
 
   return (
     <div className="flex flex-row justify-between items-center m-30">
@@ -54,7 +79,7 @@ export default function Login() {
           <button
             className="w-94 h-13 bg-normal-blue text-white font-semibold size-22 rounded-xl hover:bg-normal-hover-blue hover:text-white cursor-pointer"
             type="button"
-            onClick={() => router.push("/inicio")}
+            onClick={login}
           >
             Entrar
           </button>

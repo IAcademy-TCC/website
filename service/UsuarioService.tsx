@@ -6,7 +6,19 @@ export const axiosInstance = axios.create({
 
 export class UsuarioService{
 
-    listarTodos(){
-        return axiosInstance.get("/teste")
+    cadastrarUsuario(dados: {
+        nome:string;
+        celular:string;
+        email:string;
+        senha:string;
+    }) {
+        return axiosInstance.post("/auth/register", dados);
     }
-}
+
+    loginUsuario(dados: {
+        email: string;
+        senha: string;
+      }) {
+        return axiosInstance.post("/auth/login", dados);
+      }
+    }
