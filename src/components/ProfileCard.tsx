@@ -21,26 +21,26 @@ export default function ProfileCard() {
         {letra}
       </div>
 
-      <p className="text-lg font-semibold text-zinc-700">Olá, {nome}!</p>
+      <p className="text-lg font-semibold text-dark-grey">Olá, {nome}!</p>
 
       {/* Pontuação */}
-      <p className="text-lg text-zinc-600">
-        Você tem <span className="text-blue-600 font-semibold">{pontos.toLocaleString()}</span> pontos
+      <p className="text-lg text-dark-grey">
+        Você tem <span className="text-normal-blue font-semibold">{pontos.toLocaleString()}</span> pontos
       </p>
 
       {/* Estatísticas */}
-      <div className="flex justify-around w-full mt-2 text-blue-600 font-semibold text-sm">
+      <div className="flex justify-around w-full mt-2 text-normal-blue font-semibold text-sm">
         <div className="flex flex-col items-center">
           <span className="text-xl">{exerciciosResolvidos.toString().padStart(2, "0")}</span>
-          <span className="text-xs text-zinc-500 font-medium">Exercícios<br />Resolvidos</span>
+          <span className="text-xs text-normal-grey font-medium">Exercícios<br />Resolvidos</span>
         </div>
         <div className="flex flex-col items-center">
           <span className="text-xl">{trilhasConcluidas.toString().padStart(2, "0")}</span>
-          <span className="text-xs text-zinc-500 font-medium">Trilhas<br />Concluídas</span>
+          <span className="text-xs text-normal-grey font-medium">Trilhas<br />Concluídas</span>
         </div>
         <div className="flex flex-col items-center">
           <span className="text-xl">{interacoes.toString().padStart(2, "0")}</span>
-          <span className="text-xs text-zinc-500 font-medium">Interações</span>
+          <span className="text-xs text-normal-grey font-medium">Interações</span>
         </div>
       </div>
     </div>

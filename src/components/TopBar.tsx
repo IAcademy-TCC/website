@@ -20,12 +20,14 @@ export default function TopBar() {
 
       {/* Navegação */}
       <div className="flex items-center gap-8 text-dark-blue">
-        <div className="flex gap-6">
-          <a href="#" className="hover:text-dark-hover-blue">Início</a>
-          <a href="#" className="hover:text-dark-hover-blue">Trilhas</a>
-          <a href="#" className="hover:text-dark-hover-blue">Comunidade</a>
-          <a href="#" className="hover:text-dark-hover-blue">Ranking</a>
-        </div>
+        {user && (
+          <div className="flex gap-6">
+            <a href="/dashboard" className="hover:text-dark-hover-blue">Início</a>
+            <a href="/jornada/1" className="hover:text-dark-hover-blue">Trilhas</a>
+            <a href="#" className="hover:text-dark-hover-blue">Comunidade</a>
+            <a href="#" className="hover:text-dark-hover-blue">Ranking</a>
+          </div>
+        )}
 
         {/* Autenticação */}
         {!user ? (
