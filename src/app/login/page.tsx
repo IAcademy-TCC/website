@@ -87,7 +87,7 @@ export default function Login() {
 
         <div className="w-93 mt-3 flex flex-row">
           <p className="text-darker-grey">Ainda não tem uma conta?</p>
-          <a href="#" className="ml-1 font-semibold text-normal-blue">
+          <a href="/cadastro" className="ml-1 font-semibold text-normal-blue">
             Cadastre-se
           </a>
         </div>
