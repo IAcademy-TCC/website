@@ -15,11 +15,11 @@ export default function TopBar() {
     <div className="flex justify-between items-center h-20 px-10 w-full shadow-md">
       {/* Logo */}
       <div className="flex items-center">
-        <Image src={logo} width={220} alt="Logo IAcademy" />
+        <Image src={logo} width={270} alt="Logo IAcademy" />
       </div>
 
       {/* Navegação */}
-      <div className="flex items-center gap-8 text-dark-blue">
+      <div className="flex text-lg font-semibold items-center gap-8 text-dark-blue">
         {user && (
           <div className="flex gap-6">
             <a href="/dashboard" className="hover:text-dark-hover-blue">Início</a>

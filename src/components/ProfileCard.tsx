@@ -15,32 +15,32 @@ export default function ProfileCard() {
   const letra = perfil?.nome?.charAt(0).toUpperCase() || "?";
 
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 w-full max-w-xs text-center flex flex-col items-center gap-4">
+    <div className="bg-white rounded-xl shadow-md p-6 w-full max-w-2lg text-center flex flex-col items-center gap-4">
       {/* Avatar */}
       <div className="w-16 h-16 rounded-full bg-dark-blue text-white text-2xl flex items-center justify-center font-bold shadow">
         {letra}
       </div>
 
-      <p className="text-lg font-semibold text-dark-grey">Olá, {nome}!</p>
+      <p className="text-2xl font-semibold text-dark-grey">Olá, {nome}!</p>
 
       {/* Pontuação */}
-      <p className="text-lg text-dark-grey">
+      <p className="text-xl text-dark-grey">
         Você tem <span className="text-normal-blue font-semibold">{pontos.toLocaleString()}</span> pontos
       </p>
 
       {/* Estatísticas */}
-      <div className="flex justify-around w-full mt-2 text-normal-blue font-semibold text-sm">
+      <div className="flex justify-around w-full mt-5 text-normal-blue font-semibold text-sm">
         <div className="flex flex-col items-center">
-          <span className="text-xl">{exerciciosResolvidos.toString().padStart(2, "0")}</span>
-          <span className="text-xs text-normal-grey font-medium">Exercícios<br />Resolvidos</span>
+          <span className="text-3xl">{exerciciosResolvidos.toString().padStart(2, "0")}</span>
+          <span className="text-base text-normal-grey font-medium">Exercícios<br />Resolvidos</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-xl">{trilhasConcluidas.toString().padStart(2, "0")}</span>
-          <span className="text-xs text-normal-grey font-medium">Trilhas<br />Concluídas</span>
+          <span className="text-3xl">{trilhasConcluidas.toString().padStart(2, "0")}</span>
+          <span className="text-base text-normal-grey font-medium">Trilhas<br />Concluídas</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-xl">{interacoes.toString().padStart(2, "0")}</span>
-          <span className="text-xs text-normal-grey font-medium">Interações</span>
+          <span className="text-3xl">{interacoes.toString().padStart(2, "0")}</span>
+          <span className="text-base text-normal-grey font-medium">Interações</span>
         </div>
       </div>
     </div>

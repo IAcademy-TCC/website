@@ -39,7 +39,7 @@ export default function DashboardPage() {
           {jornada ? (
             <section
               onClick={() => router.push(`/dashboard/jornada/${jornada.id}`)}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg cursor-pointer transition-all duration-200"
+              className="bg-white w-300 p-6 rounded-xl shadow-md hover:shadow-lg cursor-pointer transition-all duration-200"
             >
               <h1 className="text-3xl font-bold text-zinc-800 mb-2">{jornada.nome}</h1>
               <p className="text-zinc-600">{jornada.descricao}</p>
