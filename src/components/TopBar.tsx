@@ -21,11 +21,11 @@ export default function TopBar() {
       {/* Navegação */}
       <div className="flex text-lg font-semibold items-center gap-8 text-dark-blue">
         {user && (
-          <div className="flex gap-6">
-            <a href="/dashboard" className="hover:text-dark-hover-blue">Início</a>
-            <a href="/jornada/1" className="hover:text-dark-hover-blue">Trilhas</a>
-            <a href="#" className="hover:text-dark-hover-blue">Comunidade</a>
-            <a href="#" className="hover:text-dark-hover-blue">Ranking</a>
+          <div className="flex gap-6 justify-between">
+            <a href="/dashboard" className="p-1 hover:text-dark-hover-blue hover:bg-light-active-blue rounded-lg">Início</a>
+            <a href="/jornada" className="p-1 hover:text-dark-hover-blue hover:bg-light-active-blue rounded-lg">Trilhas</a>
+            <a href="#" className="p-1 hover:text-dark-hover-blue hover:bg-light-active-blue rounded-lg">Comunidade</a>
+            <a href="#" className="p-1 hover:text-dark-hover-blue hover:bg-light-active-blue rounded-lg">Ranking</a>
           </div>
         )}
 

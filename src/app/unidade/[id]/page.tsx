@@ -5,6 +5,7 @@ import UnitContent from "@/components/UnitContent";
 import UnitChallenge from "@/components/UnitChallenge";
 import UnitNavigation from "@/components/UnitNavigation";
 import { useRouter } from "next/navigation";
+import TopBar from "@/components/TopBar";
 
 export default function UnidadePage() {
   const router = useRouter();
@@ -14,6 +15,8 @@ export default function UnidadePage() {
   };
 
   return (
+    <>
+    <TopBar />
     <div className="px-10 py-12 space-y-8 bg-gradient-to-br from-white to-[#f6f8fa] min-h-screen font-sans">
       <UnitHeader
         title="Introdução ao Python"
@@ -32,10 +35,10 @@ Para facilitar o entendimento, imagine que Python é como um conjunto de blocos 
       <UnitChallenge
         question="Qual das opções descreve melhor o Python?"
         options={[
-          "Uma linguagem difícil de aprender",
-          "Uma linguagem popular pela simplicidade",
-          "Um software de edição de imagens",
-          "Um banco de dados relacional",
+          "1) Uma linguagem difícil de aprender",
+          "2) Uma linguagem popular pela simplicidade",
+          "3) Um software de edição de imagens",
+          "4) Um banco de dados relacional",
         ]}
         onAnswer={handleAnswer}
       />
@@ -45,5 +48,6 @@ Para facilitar o entendimento, imagine que Python é como um conjunto de blocos 
         onNext={() => router.push("/unidade/2")}
       />
     </div>
+    </>
   );
 }

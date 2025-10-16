@@ -43,6 +43,9 @@ export default function ProfileCard() {
           <span className="text-base text-normal-grey font-medium">Interações</span>
         </div>
       </div>
+      <div>
+        <a href="/perfil" className="text-normal-blue">Ir para o perfil completo</a>
+      </div>
     </div>
   );
 }

@@ -11,16 +11,16 @@ export default function RankingCard() {
 
       <div className="flex justify-around mt-4 text-sm text-normal-blue font-semibold">
         <div className="flex flex-col items-center">
-          <span className="text-xl">07</span>
-          <p className="text-xs text-zinc-500">Exercícios</p>
+          <span className="text-2xl">07</span>
+          <p className="text-lg text-zinc-500">Exercícios</p>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-xl">02</span>
-          <p className="text-xs text-zinc-500">Trilhas</p>
+          <span className="text-2xl">02</span>
+          <p className="text-lg text-zinc-500">Trilhas</p>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-xl">16</span>
-          <p className="text-xs text-zinc-500">Interações</p>
+          <span className="text-2xl">16</span>
+          <p className="text-lg text-zinc-500">Interações</p>
         </div>
       </div>
 
