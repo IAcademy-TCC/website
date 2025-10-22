@@ -15,7 +15,7 @@ export default function RankingTabs({ onTabChange }: { onTabChange: (t: string) 
         <button
           key={t}
           onClick={() => handleTabChange(t)}
-          className={`pb-2 text-lg font-semibold capitalize ${
+          className={`pb-2 text-lg font-semibold capitalize cursor-pointer ${
             tab === t
               ? "text-normal-blue border-b-4 border-normal-blue"
               : "text-zinc-500 hover:text-normal-blue"

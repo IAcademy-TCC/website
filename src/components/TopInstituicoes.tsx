@@ -21,9 +21,9 @@ export default function TopInstituicoes() {
             <p className="text-xs">Santos</p>
           </div>
         </div>
-        <p className="text-xs text-normal-blue mt-3 cursor-pointer hover:underline">
+        <a href="/ranking" className="text-xs text-normal-blue mt-3 cursor-pointer hover:underline">
           Ver ranking completo
-        </p>
+        </a>
       </div>
     );
   }
