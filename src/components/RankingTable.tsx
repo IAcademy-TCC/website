@@ -26,7 +26,7 @@ export default function RankingTable({ data }: { data: RankingItem[] }) {
         {data.map((item) => (
           <tr
             key={item.posicao}
-            className="border-t border-zinc-100 hover:bg-zinc-50 transition"
+            className="border-t border-zinc-100  transition cursor-pointer hover:bg-light-active-blue"
           >
             <td className="p-4 flex items-center gap-2">
               {item.posicao <= 3 && (

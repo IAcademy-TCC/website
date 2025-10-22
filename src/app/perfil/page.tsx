@@ -7,7 +7,9 @@ import CertificadosCard from "@/components/CertificadosCard";
 import BadgesCard from "@/components/BadgesCard";
 import ComunidadesCard from "@/components/ComunidadesCard";
 
+
 export default function PerfilPage() {
+
   return (
     <>
       <TopBar />
