@@ -9,32 +9,60 @@ import TrilhaProgresso from "@/components/TrilhaProgresso";
 import Recomendacoes from "@/components/Recomendacoes";
 import TopInstituicoes from "@/components/TopInstituicoes";
 import ComunidadesCard from "@/components/ComunidadesCard";
+import TrailCard from "@/components/TrailCard";
+
+interface Trail {
+  id: number;
+  nome: string;
+  descricao: string;
+  pontos: number;
+  tempo: string;
+}
+
+interface Jornada {
+  id: number;
+  nome: string;
+  descricao: string;
+  trilha?: Trail[];
+}
 
 export default function DashboardPage() {
-  const [jornada, setJornada] = useState<{ id: number; nome: string; descricao: string } | null>(null);
   const router = useRouter();
+  const [search] = useState("");
+  const [jornada, setJornada] = useState<Jornada | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchJornada = async () => {
       try {
         const service = new JornadaService();
-        const response = await service.obterJornadaPorId(1); // Altere o ID conforme necessário
-        setJornada({
-          id: response.data.id,
-          nome: response.data.nome,
-          descricao: response.data.descricao,
-        });
-      } catch (error) {
-        console.error("Erro ao buscar jornada:", error);
+        const response = await service.obterJornadaPorId(1); // 🔹 busca jornada 1
+        setJornada(response.data);
+      } catch (err) {
+        console.error("Erro ao buscar jornada:", err);
+        setError("Erro ao carregar jornada.");
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchJornada();
   }, []);
 
+  // Pega apenas a primeira trilha da jornada (se existir)
+  const trilhaUnica = jornada?.trilha ? [jornada.trilha[0]] : [];
+
+  const filtered = trilhaUnica.filter((t) =>
+    t.nome.toLowerCase().includes(search.toLowerCase())
+  );
+
+  if (loading) return <div className="p-10 text-center text-gray-500">Carregando trilhas...</div>;
+  if (error) return <div className="p-10 text-center text-red-500">{error}</div>;
+
   return (
     <>
-    <TopBar />
+      <TopBar />
       <main className="px-10 py-8 bg-gradient-to-br bg-light-grey min-h-screen">
         <div className="grid grid-cols-12 gap-6">
           {/* COLUNA ESQUERDA */}
@@ -42,23 +70,32 @@ export default function DashboardPage() {
             <ProfileCard />
             <TrilhaProgresso />
           </div>
-        <div className="col-span-6 space-y-6">
-          {jornada ? (
-            <section
-              onClick={() => router.push(`/jornada/${jornada.id}`)}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg cursor-pointer transition-all duration-200"
-            >
-              <h1 className="text-2xl font-bold text-zinc-800 mb-2">{jornada.nome}</h1>
-              <p className="text-zinc-600 text-lg">{jornada.descricao}</p>
-            </section>
-          ) : (
-            <p>Carregando jornada...</p>
-          )}
 
-          <Recomendacoes />
-        </div>
-        {/* COLUNA DIREITA */}
-        <div className="col-span-3 space-y-6">
+          {/* COLUNA CENTRAL */}
+          <div className="col-span-6 space-y-6">
+            {jornada ? (
+              <section
+                onClick={() => router.push(`/jornada/${jornada.id}`)}
+                className="cursor-pointer"
+              >
+                {filtered.map((trail) => (
+                  <TrailCard
+                    key={trail.id}
+                    titulo={trail.nome}
+                    descricao={trail.descricao}
+                    pontos={trail.pontos}
+                    tempo={trail.tempo}
+                  />
+                ))}
+              </section>
+            ) : (
+              <p>Carregando jornada...</p>
+            )}
+            <Recomendacoes />
+          </div>
+
+          {/* COLUNA DIREITA */}
+          <div className="col-span-3 space-y-6">
             <TopInstituicoes />
             <ComunidadesCard />
           </div>

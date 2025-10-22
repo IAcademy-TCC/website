@@ -63,6 +63,7 @@ export default function Login() {
               alt="Microsoft Logo"
               width={20}
               height={20}
+              className="hover: text-white"
             />
             Microsoft
           </button>
@@ -89,7 +90,7 @@ export default function Login() {
 
         {/* Esqueceu a senha */}
         <div className="w-94 mt-2 text-right text-normal-blue">
-          <a href="#" className="font-bold">
+          <a href="#" className="font-bold text-base">
             Esqueceu a senha?
           </a>
         </div>
