@@ -23,9 +23,9 @@ export default function TopBar() {
         {user && (
           <div className="flex gap-6 justify-between">
             <a href="/dashboard" className="p-1 hover:text-dark-hover-blue hover:bg-light-active-blue rounded-lg">Início</a>
-            <a href="/jornada" className="p-1 hover:text-dark-hover-blue hover:bg-light-active-blue rounded-lg">Trilhas</a>
+            <a href="/trilhas" className="p-1 hover:text-dark-hover-blue hover:bg-light-active-blue rounded-lg">Trilhas</a>
             <a href="#" className="p-1 hover:text-dark-hover-blue hover:bg-light-active-blue rounded-lg">Comunidade</a>
-            <a href="#" className="p-1 hover:text-dark-hover-blue hover:bg-light-active-blue rounded-lg">Ranking</a>
+            <a href="/ranking" className="p-1 hover:text-dark-hover-blue hover:bg-light-active-blue rounded-lg">Ranking</a>
           </div>
         )}
 

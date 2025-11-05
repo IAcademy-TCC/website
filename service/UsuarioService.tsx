@@ -17,4 +17,17 @@ export class UsuarioService {
   getUsuarioLogado() {
     return axiosInstance.get("/perfil");
   }
+
+  atualizarPerfil(dados: {
+    nome?: string;
+    celular?: string;
+    idade?: number;
+    curso?: string;
+    cidade?: string;
+    estado?: string;
+    linkedin?: string;
+    github?: string;
+  }) {
+    return axiosInstance.patch("/perfil/attperfil", dados);
+  }
 }

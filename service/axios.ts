@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "https://api-iacademy.onrender.com",
+  baseURL: "https://api-iacademy.onrender.com", //"http://localhost:5000","https://api-iacademy.onrender.com",
 });
 
 // Interceptor para incluir o token automaticamente

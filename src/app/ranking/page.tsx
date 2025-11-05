@@ -4,6 +4,7 @@ import TopBar from "@/components/TopBar";
 import RankingHeader from "@/components/RankingHeader";
 import RankingTabs from "@/components/RankingTabs";
 import RankingTable from "@/components/RankingTable";
+import RankingStats from "@/components/RankingStats";
 
 export default function RankingPage() {
   const [tab, setTab] = useState("alunos");
@@ -30,9 +31,12 @@ export default function RankingPage() {
   return (
     <>
       <TopBar />
-      <main className="px-10 py-10 bg-gradient-to-br from-white to-[#f6f8fa] min-h-screen">
+      <main className="px-10 py-10 bg-gradient-to-br bg-light-grey min-h-screen">
         <RankingHeader onPeriodoChange={setPeriodo} />
         <RankingTabs onTabChange={setTab} />
+
+        <RankingStats />
+
         <RankingTable data={dados} />
       </main>
     </>
