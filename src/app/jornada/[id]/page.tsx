@@ -11,6 +11,7 @@ export default function JornadaPage() {
   const { id } = useParams();
   const [jornada, setJornada] = useState<any>(null);
   const [modulos, setModulos] = useState<any[]>([]);
+
   const secs = [
     {
       id: "avaliacoes",
@@ -29,7 +30,6 @@ export default function JornadaPage() {
     },
   ];
 
-
   useEffect(() => {
     if (!id) return;
 
@@ -37,9 +37,18 @@ export default function JornadaPage() {
       try {
         const service = new JornadaService();
         const response = await service.obterJornadaPorId(Number(id));
-        setJornada(response.data);
-        setModulos(response.data.trilha?.flatMap((t: any) => t.modulo) || []);
 
+        setJornada(response.data);
+
+        // Mapear módulos incluindo o id da trilha
+        const modulosComTrilha = response.data.trilha?.flatMap((t: any) =>
+          t.modulo.map((m: any) => ({
+            ...m,
+            trilhaId: t.id, // adiciona o id da trilha
+          }))
+        ) || [];
+
+        setModulos(modulosComTrilha);
       } catch (err) {
         console.error("Erro ao carregar jornada:", err);
       }
@@ -50,32 +59,33 @@ export default function JornadaPage() {
 
   return (
     <>
-    <TopBar />
-    <div className="p-6 max-w-6xl mx-auto">
-      {jornada ? (
-        <>
-          <h1 className="text-3xl font-bold text-dark-blue mb-4">{jornada.titulo}</h1>
-          <p className="text-lg text-gray-600 mb-6">{jornada.descricao}</p>
+      <TopBar />
+      <div className="p-6 max-w-6xl mx-auto">
+        {jornada ? (
+          <>
+            <h1 className="text-3xl font-bold text-dark-blue mb-4">{jornada.titulo}</h1>
+            <p className="text-lg text-gray-600 mb-6">{jornada.descricao}</p>
 
-          <Section section={secs} />
+            <Section section={secs} />
 
-          {modulos.length > 0 ? (
-            modulos.map((modulo, index) => (
-              <ModuloItem
-                key={modulo.id}
-                modulo={modulo}
-                index={index}
-                jornadaId={id as string}
-              />
-            ))
-          ) : (
-            <p className="text-gray-500">Nenhum módulo encontrado.</p>
-          )}
-        </>
-      ) : (
-        <p className="text-gray-500">Carregando jornada...</p>
-      )}
-    </div>
+            {modulos.length > 0 ? (
+              modulos.map((modulo, index) => (
+                <ModuloItem
+                  key={modulo.id}
+                  modulo={modulo}
+                  index={index}
+                  jornadaId={id as string}
+                  trilhaId={modulo.trilhaId} // <- passando o id da trilha
+                />
+              ))
+            ) : (
+              <p className="text-gray-500">Nenhum módulo encontrado.</p>
+            )}
+          </>
+        ) : (
+          <p className="text-gray-500">Carregando jornada...</p>
+        )}
+      </div>
     </>
   );
 }

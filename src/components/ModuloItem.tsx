@@ -6,9 +6,10 @@ interface ModuloItemProps {
   modulo: any;
   index: number;
   jornadaId: string | number;
+  trilhaId: string | number;
 }
 
-export default function ModuloItem({ modulo, index, jornadaId }: ModuloItemProps) {
+export default function ModuloItem({ modulo, index, jornadaId, trilhaId }: ModuloItemProps) {
   const [aberto, setAberto] = useState(false);
 
   return (
@@ -37,7 +38,8 @@ export default function ModuloItem({ modulo, index, jornadaId }: ModuloItemProps
           {modulo.unidade?.map((unidade: any, i: number) => (
             <Link
               key={i}
-              href={`/unidade/${unidade.id}?modulo=${modulo.id}&jornada=${jornadaId}`}
+              href={`/unidade/${unidade.id}?modulo=${modulo.id}&trilha=${trilhaId}&jornada=${jornadaId}`}
+
             >
               <div className="flex justify-between items-center bg-white px-5 py-4 border border-blue-100 rounded-xl hover:shadow-md hover:bg-light-hover-blue transition cursor-pointer">
                 <div>

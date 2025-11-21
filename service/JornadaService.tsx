@@ -13,9 +13,16 @@ export class JornadaService {
     return axiosInstance.get(`/unidade/${moduloId}`)
   }
 
-  async obterUnidadePorId(id: number){
-    return axiosInstance.get(`/unidade/${id}`)
+  async obterUnidadePorId(id: number, moduloId: number, trilhaId: number, jornadaId: number) {
+    return axiosInstance.get(`/unidade/unit/${id}`, {
+      params: {
+        modulo: moduloId,
+        trilha: trilhaId,
+        jornada: jornadaId
+      }
+    });
   }
+  
 }
 
 export const jornadaService = new JornadaService();
