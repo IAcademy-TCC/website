@@ -2,7 +2,13 @@ import { useState } from "react";
 import { Clock, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 
-export default function ModuloItem({ modulo, index }: { modulo: any; index: number }) {
+interface ModuloItemProps {
+  modulo: any;
+  index: number;
+  jornadaId: string | number;
+}
+
+export default function ModuloItem({ modulo, index, jornadaId }: ModuloItemProps) {
   const [aberto, setAberto] = useState(false);
 
   return (
@@ -29,13 +35,14 @@ export default function ModuloItem({ modulo, index }: { modulo: any; index: numb
       {aberto && (
         <div className="space-y-3 px-6 pb-6">
           {modulo.unidade?.map((unidade: any, i: number) => (
-            <Link key={i} href={`/unidade/${unidade.id}`}>
-              <div
-                className="flex justify-between items-center bg-white px-5 py-4 border border-blue-100 rounded-xl hover:shadow-md hover:bg-light-hover-blue transition cursor-pointer"
-              >
+            <Link
+              key={i}
+              href={`/unidade/${unidade.id}?modulo=${modulo.id}&jornada=${jornadaId}`}
+            >
+              <div className="flex justify-between items-center bg-white px-5 py-4 border border-blue-100 rounded-xl hover:shadow-md hover:bg-light-hover-blue transition cursor-pointer">
                 <div>
                   <p className="text-normal-blue text-lg font-semibold">{unidade.titulo}</p>
-                  <p className="text-base text-zinc-500">Unidade {i}</p>
+                  <p className="text-base text-zinc-500">Unidade {i + 1}</p>
                 </div>
                 <div className="flex items-center gap-1 text-normal-grey text-base">
                   <Clock className="w-4 h-4" />

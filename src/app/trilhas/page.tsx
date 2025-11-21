@@ -80,6 +80,7 @@ export default function TrilhasPage() {
             {filtered.map((trail) => (
               <TrailCard
                 key={trail.id}
+                id={trail.id}
                 titulo={trail.nome}
                 descricao={trail.descricao}
                 pontos={trail.pontos}
