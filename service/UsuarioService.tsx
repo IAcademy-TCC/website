@@ -30,4 +30,8 @@ export class UsuarioService {
   }) {
     return axiosInstance.patch("/perfil/attperfil", dados);
   }
+
+  adicionarPontos(data: { exercicioId: number; acertou: boolean }) {
+    return axiosInstance.patch("/perfil/pontos", data);
+  }
 }

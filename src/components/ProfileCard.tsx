@@ -1,11 +1,11 @@
 "use client";
 
 import { useAuth } from "@/app/hooks/useAuth";
+import Pontos from "./Pontos";
 
 export default function ProfileCard() {
   const { perfil } = useAuth();
 
-  const pontos = 34764; // ⚠️ Placeholder — ideal buscar via backend
   const exerciciosResolvidos = 7; // ⚠️ Placeholder
   const trilhasConcluidas = 2; // ⚠️ Placeholder
   const interacoes = 16; // ⚠️ Placeholder
@@ -23,10 +23,7 @@ export default function ProfileCard() {
 
       <p className="text-2xl font-semibold text-dark-grey">Olá, {nome}!</p>
 
-      {/* Pontuação */}
-      <p className="text-xl text-dark-grey">
-        Você tem <span className="text-normal-blue font-semibold">{pontos.toLocaleString()}</span> pontos
-      </p>
+      <Pontos />
 
       {/* Estatísticas */}
       <div className="flex justify-around w-full mt-5 text-normal-blue font-semibold text-sm">

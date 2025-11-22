@@ -1,6 +1,7 @@
 "use client";
 
 import { Star, Award, Zap } from "lucide-react";
+import Pontos from "./Pontos";
 
 export default function RankingStats() {
   const aluno = {
@@ -32,7 +33,7 @@ export default function RankingStats() {
 
         <div className="grid grid-cols-3 text-center">
           <div>
-            <p className="text-2xl font-bold text-normal-blue">{aluno.pontos.toLocaleString()}</p>
+            <Pontos />
             <p className="text-xs text-zinc-500">Pontos</p>
           </div>
           <div>

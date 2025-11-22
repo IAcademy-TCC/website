@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { JornadaService } from "../../../../service/JornadaService";
 import TopBar from "@/components/TopBar";
+import ExercicioCard from "@/components/ExercicioCard";
 
 export default function UnidadePage() {
   const { id } = useParams();                          // só existe "id" na rota
@@ -54,7 +55,7 @@ export default function UnidadePage() {
   return (
     <>
     <TopBar />
-    <div className="p-6 max-w-4xl mx-auto">
+    <div className="p-7 max-w-7xl mx-auto text-justify">
       <h1 className="text-3xl font-bold text-dark-blue mb-4">{unidade.titulo}</h1>
       <p className="text-lg text-gray-700 mb-6">{unidade.descricao}</p>
 
@@ -72,6 +73,18 @@ export default function UnidadePage() {
           className="prose prose-blue"
           dangerouslySetInnerHTML={{ __html: unidade.conteudo }}
         />
+      )}
+
+    {/* 🧩 ADICIONANDO A SEÇÃO DE EXERCÍCIOS */}
+    {unidade.exercicio && unidade.exercicio.length > 0 && (
+        <div className="mt-8">
+          <h2 className="text-2xl font-bold text-dark-blue border-b pb-2 mb-4">
+            Avaliações e Exercícios
+          </h2>
+          {unidade.exercicio.map((exercicio: any) => (
+            <ExercicioCard key={exercicio.id} exercicio={exercicio} />
+          ))}
+        </div>
       )}
     </div>
     </>
