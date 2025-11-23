@@ -66,15 +66,21 @@ export default function ExercicioPage() {
   // ────────────────────────────────────────────────
   async function verificarResposta() {
     if (selected === null || respostaIndex === null || !exercicio) return;
-
+  
     const acertou = selected === respostaIndex;
     setResultado(acertou ? "acerto" : "erro");
-
+  
     try {
-      await usuarioService.adicionarPontos({
+      const response = await usuarioService.adicionarPontos({
         exercicioId: exercicio.id,
         acertou: acertou
       });
+  
+      // --- NOVO: verificar se o exercício foi marcado como concluído ---
+      if (response?.data?.concluido) {
+        console.log("✔ Exercício concluído!");
+      }
+  
     } catch (err) {
       console.error("Erro ao adicionar pontos:", err);
     }
