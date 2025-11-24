@@ -1,3 +1,5 @@
+"use client";
+
 import { Trophy } from "lucide-react";
 
 interface RankingItem {
@@ -5,7 +7,7 @@ interface RankingItem {
   nome: string;
   instituicao?: string;
   pontos: number;
-  trilhas: number;
+  exerciciosConcluidos: number;
   interacoes: number;
 }
 
@@ -18,15 +20,16 @@ export default function RankingTable({ data }: { data: RankingItem[] }) {
           <th className="p-4">Nome</th>
           <th className="p-4">Instituição</th>
           <th className="p-4 text-center">Pontos</th>
-          <th className="p-4 text-center">Trilhas</th>
+          <th className="p-4 text-center">Exercícios Concluidos</th>
           <th className="p-4 text-center">Interações</th>
         </tr>
       </thead>
+
       <tbody>
         {data.map((item) => (
           <tr
             key={item.posicao}
-            className="border-t border-zinc-100  transition cursor-pointer hover:bg-light-active-blue"
+            className="border-t border-zinc-100 transition cursor-pointer hover:bg-light-active-blue"
           >
             <td className="p-4 flex items-center gap-2">
               {item.posicao <= 3 && (
@@ -42,10 +45,13 @@ export default function RankingTable({ data }: { data: RankingItem[] }) {
               )}
               <span className="font-semibold text-zinc-700">{item.posicao}</span>
             </td>
+
             <td className="p-4 font-medium text-zinc-800">{item.nome}</td>
             <td className="p-4 text-zinc-600">{item.instituicao || "-"}</td>
-            <td className="p-4 text-center font-semibold text-zinc-700">{item.pontos.toLocaleString()}</td>
-            <td className="p-4 text-center text-zinc-600">{item.trilhas}</td>
+            <td className="p-4 text-center font-semibold text-zinc-700">
+              {Number(item.pontos ?? 0).toLocaleString()}
+            </td>
+            <td className="p-4 text-center text-zinc-600">{item.exerciciosConcluidos}</td>
             <td className="p-4 text-center text-zinc-600">{item.interacoes}</td>
           </tr>
         ))}

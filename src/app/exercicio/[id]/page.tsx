@@ -5,6 +5,7 @@ import { useSearchParams, useParams } from "next/navigation";
 import { CheckCircle, XCircle, Loader2 } from "lucide-react";
 import { exercicioService } from "../../../../service/ExercicioService";
 import { UsuarioService } from "../../../../service/UsuarioService";
+import { useRouter } from "next/navigation";
 import TopBar from "@/components/TopBar";
 
 interface Exercicio {
@@ -16,9 +17,16 @@ interface Exercicio {
 
 export default function ExercicioPage() {
   const { id } = useParams();
+  const router = useRouter();
   const usuarioService = new UsuarioService();
   const searchParams = useSearchParams();
   const unidadeId = searchParams.get("unidade");
+  const moduloId = searchParams.get("modulo");
+  const trilhaId = searchParams.get("trilha");
+  const jornadaId = searchParams.get("jornada");
+  const personalizada = searchParams.get("personalizada") === "true";
+
+
 
   const [exercicio, setExercicio] = useState<Exercicio | null>(null);
   const [alternativasArray, setAlternativasArray] = useState<string[]>([]);
@@ -35,7 +43,8 @@ export default function ExercicioPage() {
       try {
         const response = await exercicioService.obterExercicio(
           Number(unidadeId),
-          Number(id)
+          Number(id),
+          personalizada
         );
 
         const data = response.data;
@@ -87,6 +96,12 @@ export default function ExercicioPage() {
   }
 
   function proximo() {
+
+    if (resultado === "acerto") {
+      router.push(`/unidade/${unidadeId}?modulo=${moduloId}&trilha=${trilhaId}&jornada=${jornadaId}`);
+      return;
+    }
+
     setSelected(null);
     setResultado(null);
   }

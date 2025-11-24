@@ -9,7 +9,10 @@ export type PerfilData = {
   nome: string;
   celular: string;
   usuario_id: number;
-  pontuacao: number
+  pontuacao: number;
+  exerciciosConcluidos?: number;
+  posicao?: number;
+  totalAlunos?: number;
 };
 
 export type AuthContextType = {

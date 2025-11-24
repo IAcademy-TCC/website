@@ -8,9 +8,19 @@ interface ExercicioCardProps {
     unidade_id: number;
     enunciado: string;
   };
+  moduloId: number | string;
+  jornadaId: number | string;
+  trilhaId: number | string;
+  personalizada?: boolean;
 }
 
-export default function ExercicioCard({ exercicio }: ExercicioCardProps) {
+export default function ExercicioCard({
+  exercicio,
+  moduloId,
+  jornadaId,
+  trilhaId,
+  personalizada
+}: ExercicioCardProps) {
   const [status, setStatus] = useState<{
     concluido: boolean;
     pontos: number;
@@ -67,10 +77,9 @@ export default function ExercicioCard({ exercicio }: ExercicioCardProps) {
         </div>
       )}
 
-      <a
-        href={`/exercicio/${exercicio.id}?unidade=${exercicio.unidade_id}`}
-        className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-normal-blue hover:bg-dark-blue transition duration-150"
-      >
+<a
+  href={`/exercicio/${exercicio.id}?unidade=${exercicio.unidade_id}&modulo=${moduloId}&trilha=${trilhaId}&jornada=${jornadaId}&personalizada=${personalizada ? "true" : "false"}`}
+>
         <FileText className="w-4 h-4 mr-2" />
         {status.concluido ? "Refazer" : "Iniciar Avaliação"}
       </a>
