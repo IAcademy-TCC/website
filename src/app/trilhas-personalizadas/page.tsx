@@ -6,7 +6,7 @@ import TopBar from "@/components/TopBar";
 import ModuloItem from "@/components/ModuloItem";
 
 export default function TrilhasPersonalizadasPage() {
-  const [trilha, setTrilha] = useState<any>(null);
+  const [trilha, setTrilha] = useState<unknown>(null);
   const [loading, setLoading] = useState(true);
 
   async function carregarTrilha() {
@@ -56,7 +56,7 @@ export default function TrilhasPersonalizadasPage() {
             <p className="text-gray-600 mb-6">{trilha.descricao}</p>
 
             {trilha.modulos && trilha.modulos.length > 0 ? (
-              trilha.modulos.map((modulo: any, index: number) => (
+              trilha.modulos.map((modulo: unknown, index: number) => (
                 <ModuloItem
                   key={modulo.id}
                   modulo={modulo}

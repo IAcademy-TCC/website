@@ -10,7 +10,7 @@ export default function EditarPerfil() {
   const usuarioService = new UsuarioService();
   const router = useRouter();
 
-  const [perfil, setPerfil] = useState<any>({});
+  const [perfil, setPerfil] = useState<unknown>({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function EditarPerfil() {
       console.log("Perfil atualizado:", response.data);
       alert("Perfil atualizado com sucesso!");
       router.push("/perfil");
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Erro ao atualizar perfil:", error);
       alert("Erro ao atualizar perfil.");
     }

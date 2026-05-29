@@ -29,7 +29,7 @@ export default function Cadastro() {
 
       console.log("Usuário cadastrado:", response.data)
       router.push("/inicio")
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Erro ao cadastrar usuário:", error)
       if (error.response) {
         console.log("Erro response.data:", error.response.data)

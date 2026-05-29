@@ -9,8 +9,8 @@ import Section from "@/components/Section";
 
 export default function JornadaPage() {
   const { id } = useParams();
-  const [jornada, setJornada] = useState<any>(null);
-  const [modulos, setModulos] = useState<any[]>([]);
+  const [jornada, setJornada] = useState<unknown>(null);
+  const [modulos, setModulos] = useState<unknown[]>([]);
 
   const secs = [
     {
@@ -41,8 +41,8 @@ export default function JornadaPage() {
         setJornada(response.data);
 
         // Mapear módulos incluindo o id da trilha
-        const modulosComTrilha = response.data.trilha?.flatMap((t: any) =>
-          t.modulo.map((m: any) => ({
+        const modulosComTrilha = response.data.trilha?.flatMap((t: unknown) =>
+          t.modulo.map((m: unknown) => ({
             ...m,
             trilhaId: t.id, // adiciona o id da trilha
           }))

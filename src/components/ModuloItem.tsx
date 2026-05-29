@@ -3,7 +3,7 @@ import { Clock, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 
 interface ModuloItemProps {
-  modulo: any;
+  modulo: unknown;
   index: number;
   jornadaId: string | number;
   trilhaId: string | number;
@@ -50,7 +50,7 @@ export default function ModuloItem({
 
       {aberto && (
         <div className="space-y-3 px-6 pb-6">
-          {unidades?.map((unidade: any, i: number) => (
+          {unidades?.map((unidade: unknown, i: number) => (
             <Link
               key={i}
               href={`/unidade/${unidade.id}?modulo=${modulo.id}&trilha=${trilhaId}&jornada=${jornadaId}&personalizada=${ehPersonalizada}`}

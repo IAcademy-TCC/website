@@ -12,8 +12,8 @@ export default function RankingPage() {
   const [tab, setTab] = useState("alunos");
   const [periodo, setPeriodo] = useState("mensal");
 
-  const [dadosAlunos, setDadosAlunos] = useState<any[]>([]);
-  const [dadosFaculdades, setDadosFaculdades] = useState<any[]>([]);
+  const [dadosAlunos, setDadosAlunos] = useState<unknown[]>([]);
+  const [dadosFaculdades, setDadosFaculdades] = useState<unknown[]>([]);
 
   // 🔵 Carregar ranking de alunos
   async function carregarAlunos() {
@@ -21,7 +21,7 @@ export default function RankingPage() {
       const res = await rankingService.getRankingGeral();
 
       setDadosAlunos(
-        res.data.ranking.map((item: any, index: number) => ({
+        res.data.ranking.map((item: unknown, index: number) => ({
           posicao: index + 1,
           nome: item.nome,
           instituicao: item.instituicoes?.nome || "-",
@@ -41,7 +41,7 @@ export default function RankingPage() {
       const res = await rankingService.getRankingInstituicao();
 
       setDadosFaculdades(
-        res.data.ranking.map((item: any, index: number) => ({
+        res.data.ranking.map((item: unknown, index: number) => ({
           posicao: index + 1,
           nome: item.nome,
           instituicao: item.nome,

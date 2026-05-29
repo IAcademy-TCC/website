@@ -15,7 +15,7 @@ export default function UnidadePage() {
   const trilhaId = searchParams.get("trilha");
   const personalizada = searchParams.get("personalizada") === "true"; // 👈 ADICIONADO
 
-  const [unidade, setUnidade] = useState<any>(null);
+  const [unidade, setUnidade] = useState<unknown>(null);
 
   useEffect(() => {
     if (!id || !moduloId || !jornadaId || !trilhaId) return;
@@ -78,7 +78,7 @@ export default function UnidadePage() {
               Avaliações e Exercícios
             </h2>
 
-            {unidade.exercicio.map((exercicio: any) => (
+            {unidade.exercicio.map((exercicio: unknown) => (
               <ExercicioCard
                 key={exercicio.id}
                 exercicio={exercicio}

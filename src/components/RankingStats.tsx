@@ -5,8 +5,8 @@ import { Star, Award } from "lucide-react";
 import { rankingService } from "../../service/RankingService";
 
 export default function RankingStats() {
-  const [aluno, setAluno] = useState<any>(null);
-  const [instituicao, setInstituicao] = useState<any>(null);
+  const [aluno, setAluno] = useState<unknown>(null);
+  const [instituicao, setInstituicao] = useState<unknown>(null);
 
   useEffect(() => {
     async function carregarRanking() {

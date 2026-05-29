@@ -27,7 +27,7 @@ export default function Login() {
       console.log("Login realizado:", response.data)
       localStorage.setItem("token", response.data.token)
       router.push("/inicio")
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Erro ao logar:", error)
       if (error.response?.data?.error) {
         alert(error.response.data.error)

@@ -287,7 +287,7 @@ export default function PerfilPage(): JSX.Element {
                         </label>
                         <input
                           name={name}
-                          value={(form as any)[name]}
+                          value={(form as unknown)[name]}
                           onChange={handleChange}
                           placeholder={`Digite seu ${label.toLowerCase()}`}
                           className="w-full rounded-lg px-4 py-4 text-sm bg-transparent"

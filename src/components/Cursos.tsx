@@ -9,7 +9,7 @@ export default function PopularCourses() {
       </h2>
       <div className="w-40 h-px bg-gray-200 mt-4 mb-8 mx-auto" />
       <p className="text-center text-sm text-gray-600 max-w-xl mb-10">
-        You need to be sure there isn’t anything embarrassing hidden in the
+        You need to be sure there isn’t unknownthing embarrassing hidden in the
         middle of text. All the Lorem Ipsum generators on the Internet tend
       </p>
 
@@ -33,7 +33,7 @@ export default function PopularCourses() {
               European Paintings: From Leonardo to Rembrandt
             </h3>
             <p className="text-gray-600 text-sm mb-3">
-              You need to be sure there isn’t any embarrassing hidden in middle.
+              You need to be sure there isn’t unknown embarrassing hidden in middle.
             </p>
             <div className="flex justify-between text-sm text-gray-500">
               <span>146 Students</span>
@@ -62,7 +62,7 @@ export default function PopularCourses() {
               Measure and Improve Innovation at the Workplace
             </h3>
             <p className="text-gray-600 text-sm mb-3">
-              You need to be sure there isn’t any embarrassing hidden in middle.
+              You need to be sure there isn’t unknown embarrassing hidden in middle.
             </p>
             <div className="flex justify-between text-sm text-gray-500">
               <span>146 Students</span>
@@ -91,7 +91,7 @@ export default function PopularCourses() {
               UX Design: Human Factors and Culture in Design
             </h3>
             <p className="text-gray-600 text-sm mb-3">
-              You need to be sure there isn’t any embarrassing hidden in middle.
+              You need to be sure there isn’t unknown embarrassing hidden in middle.
             </p>
             <div className="flex justify-between text-sm text-gray-500">
               <span>146 Students</span>
@@ -120,7 +120,7 @@ export default function PopularCourses() {
               Personnel Management for Public Libraries
             </h3>
             <p className="text-gray-600 text-sm mb-3">
-              You need to be sure there isn’t any embarrassing hidden in middle.
+              You need to be sure there isn’t unknown embarrassing hidden in middle.
             </p>
             <div className="flex justify-between text-sm text-gray-500">
               <span>146 Students</span>
@@ -149,7 +149,7 @@ export default function PopularCourses() {
               Budgeting and Finance for Public Libraries
             </h3>
             <p className="text-gray-600 text-sm mb-3">
-              You need to be sure there isn’t any embarrassing hidden in middle.
+              You need to be sure there isn’t unknown embarrassing hidden in middle.
             </p>
             <div className="flex justify-between text-sm text-gray-500">
               <span>146 Students</span>
@@ -178,7 +178,7 @@ export default function PopularCourses() {
               Modern Masterpieces of World Literature
             </h3>
             <p className="text-gray-600 text-sm mb-3">
-              You need to be sure there isn’t any embarrassing hidden in middle.
+              You need to be sure there isn’t unknown embarrassing hidden in middle.
             </p>
             <div className="flex justify-between text-sm text-gray-500">
               <span>146 Students</span>

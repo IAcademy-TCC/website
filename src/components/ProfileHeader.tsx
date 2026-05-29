@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 export default function ProfileHeader() {
   const router  = useRouter()
   const { perfil: perfilContext } = useAuth(); // mantém compatibilidade com o contexto
-  const [perfilData, setPerfilData] = useState<any>(perfilContext || null);
+  const [perfilData, setPerfilData] = useState<unknown>(perfilContext || null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

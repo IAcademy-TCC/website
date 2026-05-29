@@ -5,7 +5,7 @@ import FiltroRanking from "./FiltroRanking";
 import Paginacao from "./Paginacao";
 import RankingTable from "./RankingTable";
 
-export default function RankingAlunos({ data }: { data: any[] }) {
+export default function RankingAlunos({ data }: { data: unknown[] }) {
   const [pagina, setPagina] = useState(1);
   const [busca, setBusca] = useState("");
 

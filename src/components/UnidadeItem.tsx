@@ -1,6 +1,6 @@
 import { Clock } from "lucide-react";
 
-export default function UnidadeItem({ unidade, index }: any) {
+export default function UnidadeItem({ unidade, index }: unknown) {
   return (
     <div className="flex justify-between items-center bg-white px-5 py-4 border border-blue-100 rounded-xl hover:shadow-sm transition">
       <div>
