@@ -77,12 +77,20 @@ export default function ExercicioCard({
         </div>
       )}
 
-<a
-  href={`/exercicio/${exercicio.id}?unidade=${exercicio.unidade_id}&modulo=${moduloId}&trilha=${trilhaId}&jornada=${jornadaId}&personalizada=${personalizada ? "true" : "false"}`}
->
-        <FileText className="w-4 h-4 mr-2" />
-        {status.concluido ? "Refazer" : "Iniciar Avaliação"}
-      </a>
+{status.concluido ? (
+  <div className="flex items-center justify-center bg-green-100 text-green-700 px-4 py-3 rounded-xl font-semibold cursor-not-allowed">
+    <CheckCircle className="w-4 h-4 mr-2" />
+    Exercício já concluído
+  </div>
+) : (
+  <a
+    href={`/exercicio/${exercicio.id}?unidade=${exercicio.unidade_id}&modulo=${moduloId}&trilha=${trilhaId}&jornada=${jornadaId}&personalizada=${personalizada ? "true" : "false"}`}
+    className="flex items-center justify-center bg-normal-blue hover:bg-dark-blue text-white px-4 py-3 rounded-xl font-semibold transition"
+  >
+    <FileText className="w-4 h-4 mr-2" />
+    Iniciar Avaliação
+  </a>
+)}
     </div>
   );
 }
